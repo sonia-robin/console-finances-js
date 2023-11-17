@@ -90,6 +90,11 @@ var finances = [
 //Variables declared
 var totalMonths = 0;
 var totalAmount = 0;
+var change = 0;
+var averageChange = 0;
+var diff = 0;
+var greatestDiff = 0;
+var greatestDiffDate;
 
 //The total number of months included in the dataset
 console.log("Total Months: " + finances.length);
@@ -99,3 +104,32 @@ for (var i = 0; i < finances.length; i++) {
   totalAmount = totalAmount + finances[i][1];
 }
 console.log("Total: $" + totalAmount); 
+
+//Track what the total change in Profit/Losses are from month to month
+for (var i = 0; i < finances.length-1; i++) {
+  change = change + finances[i+1][1] - finances[i][1];
+}
+
+//The average of the changes in Profit/Losses over the entire period.
+averageChange = change/(finances.length-1)
+console.log("Average Change: " + Math.round(averageChange*100)/100);
+
+//The greatest increase in Profit/Losses (date and amount) over the entire period.
+for (var i = 0; i < finances.length-1; i++) {
+  diff = finances[i+1][1] - finances[i][1];
+  if (greatestDiff<diff) {
+    greatestDiff=diff;
+    greatestDiffDate = finances[i+1][0];
+  }
+}
+console.log("Greatest Increase in Profits/Losses: " + greatestDiffDate +" ($" + greatestDiff + ")");
+
+//The greatest decrease in Profit/Losses (date and amount) over the entire period.
+for (var i = 0; i < finances.length-1; i++) {
+  diff = finances[i+1][1] - finances[i][1];
+  if (greatestDiff>diff) {
+    greatestDiff=diff;
+    greatestDiffDate = finances[i+1][0];
+  }
+}
+console.log("Greatest Decrease in Profits/Losses: " + greatestDiffDate +" ($" + greatestDiff + ")");
