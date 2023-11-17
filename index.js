@@ -86,3 +86,16 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//Variables declared
+var totalMonths = 0;
+var totalAmount = 0;
+
+//The total number of months included in the dataset
+console.log("Total Months: " + finances.length);
+
+//The net total amount of Profit/Losses over the entire period
+for (var i = 0; i < finances.length; i++) {
+  totalAmount = totalAmount + finances[i][1];
+}
+console.log("Total: $" + totalAmount); 
