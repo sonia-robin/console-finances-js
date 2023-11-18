@@ -87,6 +87,10 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+//Heading
+console.log("Financial analysis")
+console.log("----------------------")
+
 //Variables declared
 var totalMonths = 0;
 var totalAmount = 0;
