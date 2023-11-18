@@ -121,8 +121,8 @@ console.log("Average Change: " + Math.round(averageChange*100)/100);
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 for (var i = 0; i < finances.length-1; i++) {
   diff = finances[i+1][1] - finances[i][1];
-  if (greatestDiff<diff) {
-    greatestDiff=diff;
+  if (greatestDiff < diff) {
+    greatestDiff = diff;
     greatestDiffDate = finances[i+1][0];
   }
 }
@@ -131,8 +131,8 @@ console.log("Greatest Increase in Profits/Losses: " + greatestDiffDate +" ($" + 
 //The greatest decrease in Profit/Losses (date and amount) over the entire period.
 for (var i = 0; i < finances.length-1; i++) {
   diff = finances[i+1][1] - finances[i][1];
-  if (greatestDiff>diff) {
-    greatestDiff=diff;
+  if (greatestDiff > diff) {
+    greatestDiff = diff;
     greatestDiffDate = finances[i+1][0];
   }
 }
