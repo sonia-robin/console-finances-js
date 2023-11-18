@@ -94,7 +94,7 @@ var change = 0;
 var averageChange = 0;
 var diff = 0;
 var greatestDiff = 0;
-var greatestDiffDate;
+var greatestDiffDate = 0;
 
 //The total number of months included in the dataset
 console.log("Total Months: " + finances.length);
